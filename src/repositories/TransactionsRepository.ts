@@ -32,6 +32,7 @@ class TransactionsRepository {
       .filter(transaction => transaction.type === 'outcome')
       .map(transaction => transaction.value)
       .reduce(reduce, 0);
+
     const total = income - outcome;
     return { income, outcome, total };
   }
